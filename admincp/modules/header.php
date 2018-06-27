@@ -45,5 +45,41 @@
 			</div>
 		</div><!--/header-middle-->
 	
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9" style="z-index:100;">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style=" margin-right:0px">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="index.php" class="active">Home</a></li>
+								<li><a href="#">Products</a></li>
+								<li><a href="#">Bills</a></li>
+							</ul>
+						</div>
+					</div>
+					<!--<div class="col-sm-3">
+					 <form action ="index.php" method="POST">
+						<div class="input-group pull-right" style="padding-right:60px">
+							<input class="form-control" type="text" name="txt-search" value="" placeholder="Search Dota2 Set & Item..." required>
+							<div class="input-group-btn">
+							<button class="btn btn-default" name="btn-search" type="submit" >
+							<i class="fa fa-search"></i></button> 
+							</div>
+						  
+						</div>	
+					 </form>
+					</div>-->
+					
+				</div>
+			</div>
+		</div><!--/header-bottom-->
 		
 	</header><!--/header-->

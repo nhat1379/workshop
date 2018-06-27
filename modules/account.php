@@ -95,18 +95,14 @@
 						<tr>  
 							<td style="vertical-align: middle"><?php echo $bill_id; ?></td>
 							<td>
-							
 							<?php
 								while ($rows_detail = mysqli_fetch_array ($detail)) {
 							?>
-								
 								<p style="font-size: 12px; margin: 0px"><img src="images/images/<?php echo $rows_detail['item_image'];?>" width = "40px">
 								<?php echo number_format($rows_detail['detail_dongia']) .' x '. $rows_detail['detail_qty']; ?></p>
-							
 							<?php
 								}
 							?>
-						
 							</td> 
 							<td style="vertical-align: middle"><?php $date1 = $rows_sql['bill_date'];
 							echo date("d/m/Y", strtotime($date1)) ?></td>
