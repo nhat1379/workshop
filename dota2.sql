@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 27, 2018 lúc 06:06 AM
+-- Thời gian đã tạo: Th6 28, 2018 lúc 12:26 PM
 -- Phiên bản máy phục vụ: 10.1.31-MariaDB
 -- Phiên bản PHP: 5.6.35
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `d2_bill` (
   `bill_id` int(8) NOT NULL,
-  `bill_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `bill_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_id` int(8) NOT NULL,
   `bill_total` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `bill_stt` varchar(255) COLLATE utf8_unicode_ci NOT NULL
@@ -41,15 +41,12 @@ CREATE TABLE `d2_bill` (
 --
 
 INSERT INTO `d2_bill` (`bill_id`, `bill_date`, `user_id`, `bill_total`, `bill_stt`) VALUES
-(79, '2018-06-25 11:11:00', 21, '225000', ''),
-(91, '2018-06-25 15:31:00', 16, '35000', ''),
-(92, '2018-06-25 15:35:00', 16, '300000', ''),
-(93, '0000-00-00 00:00:00', 16, '25000', ''),
-(94, '2018-06-27 09:04:00', 16, '100000', ''),
-(95, '2018-06-27 09:19:00', 16, '70000', ''),
-(96, '2018-06-27 09:57:00', 17, '90000', ''),
-(97, '2018-06-27 09:58:00', 17, '90000', ''),
-(98, '2018-06-27 09:59:00', 17, '50000', '');
+(91, '2018-06-28 00:24:34', 16, '35000', 'Delivered'),
+(92, '2018-06-28 09:58:18', 16, '300000', 'Delivered'),
+(93, '2018-06-28 00:24:30', 16, '25000', 'Transporting'),
+(94, '2018-06-28 00:23:29', 16, '100000', 'Processing'),
+(95, '2018-06-28 08:38:02', 16, '70000', 'Delivered'),
+(106, '2018-06-28 10:14:05', 17, '20000', 'Delivered');
 
 -- --------------------------------------------------------
 
@@ -71,7 +68,6 @@ CREATE TABLE `d2_billdetail` (
 --
 
 INSERT INTO `d2_billdetail` (`detail_id`, `bill_id`, `item_id`, `detail_qty`, `detail_dongia`, `detail_thanhtien`) VALUES
-(69, 79, 136, '5', '45000', '225000'),
 (83, 91, 145, '1', '35000', '35000'),
 (84, 92, 121, '2', '135000', '270000'),
 (85, 92, 170, '1', '30000', '30000'),
@@ -80,10 +76,8 @@ INSERT INTO `d2_billdetail` (`detail_id`, `bill_id`, `item_id`, `detail_qty`, `d
 (88, 94, 133, '1', '55000', '55000'),
 (89, 95, 155, '1', '10000', '10000'),
 (90, 95, 106, '2', '30000', '60000'),
-(91, 96, 147, '1', '35000', '35000'),
-(92, 96, 133, '1', '55000', '55000'),
-(93, 98, 174, '1', '10000', '10000'),
-(94, 98, 139, '1', '40000', '40000');
+(109, 106, 160, '1', '15000', '15000'),
+(110, 106, 169, '1', '5000', '5000');
 
 -- --------------------------------------------------------
 
@@ -236,7 +230,7 @@ CREATE TABLE `d2_users` (
 
 INSERT INTO `d2_users` (`user_id`, `user_name`, `user_email`, `user_login`, `user_password`, `user_image`, `user_lv`) VALUES
 (14, 'Nguyễn Thế Trung', 'trungocvl@gmail.com', 'trung1379', '73717dd9132cba21cb110726e6a5fa45', 'uploads/55ad40de68a97e708e2f35bbb3d1c7eb.jpg', 0),
-(16, 'Nhật Nguyễn', 'nhat1379@gmail.com', 'nhat1379', '9bbda34538b8a13e6acff8beec4db65f', 'uploads/45adf18e33f21274b.jpg', 0),
+(16, 'Nhat Nguyen', 'nhat1379@gmail.com', 'nhat1379', '9bbda34538b8a13e6acff8beec4db65f', 'uploads/45adf18e33f21274b.jpg', 1),
 (17, 'Tuan Anh', 'tuananh@gmail.com', 'tuan1379', '9bbda34538b8a13e6acff8beec4db65f', 'uploads/940bce0b6b7acd822d1808e2e68feb97.jpg', 0),
 (18, 'admin', 'admin@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 1),
 (19, 'nam123', 'nam123@gmail.com', 'nam123', 'e10adc3949ba59abbe56e057f20f883e', '', 0),
@@ -296,13 +290,13 @@ ALTER TABLE `d2_users`
 -- AUTO_INCREMENT cho bảng `d2_bill`
 --
 ALTER TABLE `d2_bill`
-  MODIFY `bill_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `bill_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT cho bảng `d2_billdetail`
 --
 ALTER TABLE `d2_billdetail`
-  MODIFY `detail_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `detail_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT cho bảng `d2_item`
