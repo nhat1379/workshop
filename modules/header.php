@@ -50,12 +50,16 @@
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<?php 
-										if (isset ($_SESSION['login'])) {
-											echo '<li><a href="index.php?view=account/'.$_SESSION['login'][3].'"><i class="fa fa-user"></i> '.$_SESSION['login'][1] .'</a></li>';
-										}else{
-											echo '<li><a href="index.php?view=register"><i class="fa fa-user"></i> Register</a></li>';
-										}
-									?>
+									if (isset ($_SESSION['login'])) {
+								?>
+								
+									<li><a href="index.php?view=account/<?=$_SESSION['login'][3]?>"><i class="fa fa-user"></i> <?=$_SESSION['login'][1] ?><?php if ($_SESSION['login']['user_lv']==1){ echo ' (administrator)';  } ?></a></li>
+									
+								<?php
+									}else{
+										echo '<li><a href="index.php?view=register"><i class="fa fa-user"></i> Register</a></li>';
+									}
+								?>
 								
 								<li><a href="index.php?view=cart"><i class="fa fa-shopping-cart"></i> Cart (<?php echo $cart ?>)</a></li>
 								<?php
@@ -102,7 +106,7 @@
                                     </ul>
                                 </li> 
 								<li><a href="404.html">404</a></li>
-								<li><a href="#">Contact</a></li>
+								<li><a href="index.php?view=contact">Contact</a></li>
 							</ul>
 						</div>
 					</div>

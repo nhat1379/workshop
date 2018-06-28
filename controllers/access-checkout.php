@@ -23,7 +23,8 @@
 		/*echo '<pre>';
 		var_dump($_SESSION['cart']);
 		echo '</pre>';*/
-		$sql = mysqli_query ($conn,"INSERT INTO d2_bill (bill_date, user_id, bill_total) VALUES ('$date','$user_id','$billtotal')");
+		$date = date('Y-m-d H:i:s');
+		$sql = mysqli_query ($conn,"INSERT INTO d2_bill (bill_date, user_id, bill_total, bill_stt) VALUES ('$date','$user_id','$billtotal','Processing')");
 		if ($sql) {
 			$kq = 'thanh cong';
 		}else{

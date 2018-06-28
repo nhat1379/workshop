@@ -36,8 +36,10 @@
 							<a href="index.php"><img src="https://d1u5p3l4wpay3k.cloudfront.net/dota2_gamepedia/5/52/Dota_2.png" style="width: 200px;" alt="" /></a>
 						</div>
 					</div>
+					
 					<form action="index.php" method="POST">
 						<div class="col-sm-4  pull-right" style="padding-right: 0px;">
+							<p style="line-height:30px;display:unset;">Hello, <?php echo $_SESSION['admin'] ?> (administrator)</p>
 							<button class="btn btn-success  pull-right" name="logout">Logout <span class="glyphicon glyphicon-log-out"></span></button>
 						</div>
 					</form>
@@ -60,8 +62,9 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php" class="active">Home</a></li>
-								<li><a href="#">Products</a></li>
-								<li><a href="#">Bills</a></li>
+								<li><a href="index.php">Products</a></li>
+								<li><a href="index.php?view=bill">Bills</a></li>
+								<li><a href="index.php?view=account">Account</a></li>
 							</ul>
 						</div>
 					</div>

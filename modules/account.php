@@ -14,7 +14,7 @@
 	
 	$user = mysqli_query($conn,"SELECT * FROM d2_users where user_login = '$login2'");
 	$rows_user = mysqli_fetch_array ($user);
-	$sql = mysqli_query ($conn,"SELECT * FROM d2_bill INNER JOIN d2_users ON d2_bill.user_id = d2_users.user_id WHERE d2_bill.user_id = '$login3' ");
+	$sql = mysqli_query ($conn,"SELECT * FROM d2_bill INNER JOIN d2_users ON d2_bill.user_id = d2_users.user_id WHERE d2_bill.user_id = '$login3' order by bill_id DESC ");
 	
 	
 					
@@ -79,8 +79,9 @@
 					<tr>
 						<th>Bill ID</th>
 						<th>Items</th>
-						<th>Date</th>
 						<th>Total</th>
+						<th>Date</th>
+						<th>Status</th>
 					</tr>
 				</thead>
 				  <?php  
@@ -99,14 +100,16 @@
 								while ($rows_detail = mysqli_fetch_array ($detail)) {
 							?>
 								<p style="font-size: 12px; margin: 0px"><img src="images/images/<?php echo $rows_detail['item_image'];?>" width = "40px">
-								<?php echo number_format($rows_detail['detail_dongia']) .' x '. $rows_detail['detail_qty']; ?></p>
+								<?php echo number_format($rows_detail['detail_dongia']) .' <i class="fa fa-times"></i> '. $rows_detail['detail_qty']; ?></p>
 							<?php
 								}
 							?>
 							</td> 
+							
+							<td style="vertical-align: middle"><?php echo number_format($rows_sql['bill_total']); ?> VNĐ</td>
 							<td style="vertical-align: middle"><?php $date1 = $rows_sql['bill_date'];
 							echo date("d/m/Y", strtotime($date1)) ?></td>
-							<td style="vertical-align: middle"><?php echo number_format($rows_sql['bill_total']); ?> VNĐ</td>
+							<td style="vertical-align: middle"><?=$rows_sql['bill_stt']; ?></td>
 						</tr>
 				  <?php
 						}

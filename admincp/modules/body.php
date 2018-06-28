@@ -21,9 +21,22 @@
 	
 	<div class="row">
 	
-	<?php include ("modules/body-left.php"); ?>	
+	<?php 
 	
-	<?php include ("modules/body-right.php"); ?>
+	if (isset ($_GET['view'])){
+		$view = $_GET['view'];
+	}else{
+		$view = '';
+	}
+	if ($view == 'bill'){
+		include ("modules/bill.php");
+	}elseif ($view == 'account') {
+		include ("modules/account.php"); 
+	}else{
+		include ("modules/body-left.php"); 	
+		include ("modules/body-right.php");
+	}
+	?>
 	</div>
 	
 	
