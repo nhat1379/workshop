@@ -1,3 +1,5 @@
-Thank you for downloading this Bootstrap theme. This theme was downloaded from UseBootstrap.com
-
-If you need more themes, visit our website: http://usebootstrap.com/
+- CSDL dota2.sql ở ngay thư mục chính
+- Restore dữ liệu vào mysql -> chỉnh lại file config trong thư mục: modules.config.php và admincp/modules/config.php
+- Trang quản trị: /admincp/
+- TK admin: admin-admin; nhat1379-137924865
+- TK khách: tuan1379-137924865, TK admin cũng đăng nhập được
